@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyCard component testing CurrencyCard snapshot testing should match to snapshot 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-content"
+  >
+    <div
+      className="card-name"
+    >
+      <p>
+        CAD
+      </p>
+      <p
+        className="card-number"
+      >
+        200,400.00
+      </p>
+    </div>
+    <div
+      className="card-footer"
+    >
+      <p
+        className="text-italic text-bolder"
+      >
+        CAD
+         - 
+        Canadian Dollar
+      </p>
+      <p
+        className="text-italic"
+      >
+        1 
+        USD
+         = 
+        CAD
+         
+        10,020.00
+      </p>
+    </div>
+  </div>
+  <button
+    className="card-delete"
+    onClick={[Function]}
+  >
+    -
+  </button>
+</div>
+`;

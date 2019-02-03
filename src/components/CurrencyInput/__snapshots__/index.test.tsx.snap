@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrencyInput component testing CurrencyInput snapshot testing should match to snapshot 1`] = `
+<div
+  className="currency-input"
+>
+  <p
+    className="currency-input-detail text-italic"
+  >
+    USD
+     - 
+    United States Dollars
+  </p>
+  <div
+    className="currency-input-body"
+  >
+    <p
+      className="currency-input-text"
+    >
+      USD
+    </p>
+    <input
+      onChange={[Function]}
+      placeholder="Value"
+      type="text"
+      value={10}
+    />
+  </div>
+</div>
+`;

@@ -1,0 +1,217 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component testing App snapshot test Should render to match snapshot 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="App-header"
+  >
+    <div
+      className="currency-table"
+    >
+      <div
+        className="currency-input"
+      >
+        <p
+          className="currency-input-detail text-italic"
+        >
+          USD
+           - 
+          United States Dollar
+        </p>
+        <div
+          className="currency-input-body"
+        >
+          <p
+            className="currency-input-text"
+          >
+            USD
+          </p>
+          <input
+            onChange={[Function]}
+            placeholder="Value"
+            type="text"
+            value={10}
+          />
+        </div>
+      </div>
+      <div
+        className="currency-content"
+      >
+        <div
+          className="card"
+        >
+          <div
+            className="card-content"
+          >
+            <div
+              className="card-name"
+            >
+              <p>
+                IDR
+              </p>
+            </div>
+            <div
+              className="card-footer"
+            >
+              <p
+                className="text-italic text-bolder"
+              >
+                IDR
+                 - 
+                Indonesian Rupiah
+              </p>
+              <p
+                className="text-italic"
+              >
+                1 
+                USD
+                 = 
+                IDR
+                 
+              </p>
+            </div>
+          </div>
+          <button
+            className="card-delete"
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </div>
+        <div
+          className="card"
+        >
+          <div
+            className="card-content"
+          >
+            <div
+              className="card-name"
+            >
+              <p>
+                EUR
+              </p>
+            </div>
+            <div
+              className="card-footer"
+            >
+              <p
+                className="text-italic text-bolder"
+              >
+                EUR
+                 - 
+                Euro
+              </p>
+              <p
+                className="text-italic"
+              >
+                1 
+                USD
+                 = 
+                EUR
+                 
+              </p>
+            </div>
+          </div>
+          <button
+            className="card-delete"
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </div>
+        <div
+          className="card"
+        >
+          <div
+            className="card-content"
+          >
+            <div
+              className="card-name"
+            >
+              <p>
+                GBP
+              </p>
+            </div>
+            <div
+              className="card-footer"
+            >
+              <p
+                className="text-italic text-bolder"
+              >
+                GBP
+                 - 
+                British Pound Sterling
+              </p>
+              <p
+                className="text-italic"
+              >
+                1 
+                USD
+                 = 
+                GBP
+                 
+              </p>
+            </div>
+          </div>
+          <button
+            className="card-delete"
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </div>
+        <div
+          className="card"
+        >
+          <div
+            className="card-content"
+          >
+            <div
+              className="card-name"
+            >
+              <p>
+                SGD
+              </p>
+            </div>
+            <div
+              className="card-footer"
+            >
+              <p
+                className="text-italic text-bolder"
+              >
+                SGD
+                 - 
+                Singapore Dollar
+              </p>
+              <p
+                className="text-italic"
+              >
+                1 
+                USD
+                 = 
+                SGD
+                 
+              </p>
+            </div>
+          </div>
+          <button
+            className="card-delete"
+            onClick={[Function]}
+          >
+            -
+          </button>
+        </div>
+        <button
+          className="currency-add"
+          onClick={[Function]}
+          type="button"
+        >
+          Add More Currencies
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;

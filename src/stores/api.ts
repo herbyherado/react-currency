@@ -1,13 +1,13 @@
 import { baseUrl } from '../utils/baseUrl';
 
-const options = {
+export const options = {
   method: 'GET',
   headers: {
     Accept: 'application/json'
   }
 };
 
-class CurrencyApi {
+export class CurrencyApi {
   fetchCurrency = async (currency: string) =>
     await fetch(`${baseUrl}/latest?base=${currency}`, options)
       .then(res => (res.ok ? res.json() : new Error('Failed to fetch')))
