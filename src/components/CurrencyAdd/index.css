@@ -1,0 +1,41 @@
+/* ADD CURRENCY */
+button.currency-add {
+  border: 1px solid white;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+
+  background: transparent;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* SELECT DROPDOWN */
+
+.select-currency {
+  margin: 2rem 0 1rem 0;
+  font-size: 1rem;
+}
+
+.select-currency > div {
+  background: #282c34 !important;
+  border-radius: 0;
+  border-color: #ffffff;
+}
+
+.select-currency > div > div > div {
+  color: white;
+}
+
+.select-currency [id*='react-select'] {
+  color: #ffffff !important;
+}
+
+.select-currency [id*='react-select']:hover {
+  background: #ffffff;
+  color: #000000 !important;
+}
