@@ -17,7 +17,9 @@
     "experimentalDecorators": true,
     "lib": ["es2018", "dom"],
     // Allow jsx for react
-    "jsx": "react"
+    "jsx": "react",
+    // resolve type error --isolatedModules for big.js
+    "skipLibCheck": true
   },
   "include": ["src/"]
 }

@@ -30,7 +30,7 @@ class CurrencyInput extends PureComponent<CurrencyInputProps> {
 type CurrencyInputProps = {
   baseName: string;
   baseFullName: string;
-  baseValue: number;
+  baseValue: number | string;
   onInputChange: (event: React.FormEvent<HTMLInputElement>) => void;
 };
 

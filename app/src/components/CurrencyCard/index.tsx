@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { times } from '../../utils/number';
 import './index.css';
 
 const localeOptions = {
@@ -21,7 +22,9 @@ class CurrencyCard extends PureComponent<CurrencyCardProps> {
             <p>{currencyName}</p>
             {currencyValue ? (
               <p className="card-number">
-                {(currencyValue * baseValue).toLocaleString('en', localeOptions)}
+                {typeof baseValue === 'number'
+                  ? (currencyValue * baseValue).toLocaleString('en', localeOptions)
+                  : times(baseValue, currencyValue)}
               </p>
             ) : null}
           </div>
@@ -48,7 +51,7 @@ type CurrencyCardProps = {
   currencyFullName: string;
   currencyValue: number;
   baseName: string;
-  baseValue: number;
+  baseValue: number | string;
   onRemoveCard: () => void;
 };
 

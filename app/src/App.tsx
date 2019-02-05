@@ -17,8 +17,11 @@ class App extends Component<AppProps, AppState> {
   };
 
   handleInputChange = (e: React.FormEvent<HTMLInputElement>) => {
-    if (!isNaN(Number(e.currentTarget.value))) {
-      this.setState({ baseValue: Number(e.currentTarget.value) });
+    const bigint = 9007199254740992; // maximum number allowed in JS 2^53
+    let input = e.currentTarget.value;
+    let selectedValue = Number(input) > bigint ? input : Number(input);
+    if (!isNaN(Number(input))) {
+      this.setState({ baseValue: selectedValue });
     }
   };
 
@@ -76,7 +79,7 @@ class App extends Component<AppProps, AppState> {
 }
 
 type AppState = {
-  baseValue: number;
+  baseValue: number | string;
   _addNew: boolean;
 };
 
