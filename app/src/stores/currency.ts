@@ -6,10 +6,10 @@ const currencyNames = require('../assets/currency.json');
 configure({ enforceActions: 'observed' });
 
 export class CurrencyStore {
-  @observable baseCurrency: string = 'USD';
-  @observable displayCurrencies: string[] = ['IDR', 'EUR', 'GBP', 'SGD'];
-  @observable currencyValues: CurrencyValues = {};
-  @observable names: CurrencyNames = {};
+  @observable.ref baseCurrency: string = 'USD';
+  @observable.shallow displayCurrencies: string[] = ['IDR', 'EUR', 'GBP', 'SGD'];
+  @observable.ref currencyValues: CurrencyValues = {};
+  @observable.ref names: CurrencyNames = {};
   @observable api: any;
 
   constructor(api: any, names: CurrencyNames) {
