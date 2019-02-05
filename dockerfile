@@ -1,16 +1,19 @@
-FROM node:alpine
+# Stage 1
+FROM node:8-alpine as init-build
 
-ENV NPM_CONFIG_LOGLEVEL warn
-
-ARG app_env
-
-ENV APP_ENV $app_env
-
+# Create app directory
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
+# Bundle app source
 COPY ./app ./
+RUN yarn && yarn build
 
-RUN yarn install
+# Stage 2
+FROM nginx:1.12-alpine
+COPY --from=init-build /usr/src/app/build /usr/share/nginx/html
 
-CMD ["yarn", "start"]
+# Expose port of service
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

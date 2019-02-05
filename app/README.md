@@ -1,5 +1,62 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Docker
+
+#### Creating the container
+
+```
+# on directory with existing dockerfile, build image with tag docker-currency
+$ docker build -t docker-currency .
+
+# see list of build images
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+docker-currency      latest              2cbc9e9291ef        8 hours ago         16.9MB
+node                8-alpine            e8ae960eaa9e        5 days ago          66.3MB
+nginx               1.12-alpine         24ed1c575f81        13 months ago       15.5MB
+
+# run command in a new container with mapped port 8000
+$ docker run -p 8000:80 docker-currency
+
+# list containers
+$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+385d9cdd018a        docker-currency      "nginx -g 'daemon of…"   30 minutes ago      Up 30 minutes       0.0.0.0:5000->80/tcp   amazing_murdock
+
+# stop container
+$ docker stop amazing_murdock
+```
+
+#### Running the container
+
+Assuming that `docker-machine` has previously been set up with virtualbox and started,
+Run container through `docker-machine` with following guides:
+
+```
+# see list of docker virtual machine on the local box
+$ docker-machine ls
+NAME      ACTIVE   DRIVER       STATE     URL                         SWARM   DOCKER     ERRORS
+default   *        virtualbox   Running   tcp://192.168.99.101:2376           v18.09.1
+
+# see the virtual machine's IP
+$ docker-machine ip
+192.168.99.101
+
+# see status of docker-machine
+$ docker-machine default
+Running
+
+# run a command on the machine using 'ssh'
+# the commanmd runs image 'docker-currency' with mapped port 8000
+$ docker-machine ssh default "docker run -p 8000:80 docker-currency"
+
+# make a request to the app running inside the container
+$ curl 192.168.99.101:8000
+<!-- response here -->
+
+# access through http://localhost:8000
+```
+
 ## Available Scripts
 
 In the project directory, you can run:
