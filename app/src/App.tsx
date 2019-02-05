@@ -5,7 +5,7 @@ import CurrencyInput from './components/CurrencyInput';
 import CurrencyCard from './components/CurrencyCard';
 import CurrencyAdd from './components/CurrencyAdd';
 
-import currencyStore, { CurrencyValues, CurrencyNames } from './stores/currency';
+import store, { CurrencyValues, CurrencyNames } from './stores/currency';
 import { DropdownOption } from './components/CurrencyAdd';
 import './App.css';
 
@@ -23,15 +23,15 @@ class App extends Component<AppProps, AppState> {
   };
 
   handleRemoveCurrency = (index: number) => {
-    if (currencyStore.countDisplayed > 1) {
-      currencyStore.removeCurrency(index);
+    if (store.countDisplayed > 1) {
+      store.removeCurrency(index);
     }
   };
 
   handleAddCurrency = () => this.setState({ _addNew: true });
 
   handleSelectCurrency = (option: DropdownOption) => {
-    currencyStore.addCurrency(option.value);
+    store.addCurrency(option.value);
     this.setState({ _addNew: false });
   };
 
@@ -45,7 +45,7 @@ class App extends Component<AppProps, AppState> {
           <div className="currency-table">
             <CurrencyInput
               baseName={baseCurrency}
-              baseFullName={currencyStore.getCurrencyName(baseCurrency)}
+              baseFullName={store.getCurrencyName(baseCurrency)}
               baseValue={baseValue}
               onInputChange={(e: React.FormEvent<HTMLInputElement>) => this.handleInputChange(e)}
             />
@@ -63,7 +63,7 @@ class App extends Component<AppProps, AppState> {
               ))}
               <CurrencyAdd
                 addNew={_addNew}
-                options={currencyStore.currencyList}
+                options={store.currencyList}
                 onSelectCurrency={this.handleSelectCurrency}
                 onAddCurrency={this.handleAddCurrency}
               />

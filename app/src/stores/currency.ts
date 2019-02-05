@@ -12,9 +12,9 @@ export class CurrencyStore {
   @observable names: CurrencyNames = {};
   @observable api: any;
 
-  constructor(api: any, currencyNames: CurrencyNames) {
+  constructor(api: any, names: CurrencyNames) {
     this.api = api;
-    this.names = currencyNames;
+    this.names = names;
   }
 
   @action
@@ -54,10 +54,10 @@ export class CurrencyStore {
   }
 }
 
-const currencyStore = new CurrencyStore(api, currencyNames);
+const store = new CurrencyStore(api, currencyNames);
 
 autorun(() => {
-  currencyStore.fetchCurrency();
+  store.fetchCurrency();
 });
 
 export interface CurrencyValues {
@@ -68,4 +68,4 @@ export interface CurrencyNames {
   [name: string]: string;
 }
 
-export default currencyStore;
+export default store;
