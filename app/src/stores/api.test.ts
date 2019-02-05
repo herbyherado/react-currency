@@ -10,7 +10,7 @@ describe('CurrencyApiStore', function() {
     let promiseHelper: any;
 
     beforeEach(function() {
-      const fakePromise = new Promise(function(resolve, reject) {
+      const fakePromise: Promise<{}> = new Promise(function(resolve, reject) {
         promiseHelper = {
           resolve: resolve,
           reject: reject

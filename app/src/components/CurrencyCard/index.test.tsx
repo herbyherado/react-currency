@@ -5,7 +5,7 @@ import CurrencyCard from './index';
 describe('CurrencyCard component testing', function() {
   describe('CurrencyCard snapshot testing', function() {
     it('should match to snapshot', function() {
-      const component = renderer.create(
+      const component: renderer.ReactTestRenderer = renderer.create(
         <CurrencyCard
           currencyName="CAD"
           currencyFullName="Canadian Dollar"
@@ -22,7 +22,7 @@ describe('CurrencyCard component testing', function() {
   describe('CurrencyCard method calls', function() {
     describe('handleRemoveCard', function() {
       it('should call onRemoveCard props', function() {
-        const component = renderer.create(
+        const component: renderer.ReactTestRenderer = renderer.create(
           <CurrencyCard
             currencyName="CAD"
             currencyFullName="Canadian Dollar"
@@ -34,7 +34,7 @@ describe('CurrencyCard component testing', function() {
         );
 
         const handleRemoveCard = component.root.instance.handleRemoveCard;
-        const propsSpy = jest.spyOn(component.root.props, 'onRemoveCard');
+        const propsSpy: jest.SpyInstance = jest.spyOn(component.root.props, 'onRemoveCard');
 
         handleRemoveCard();
         expect(propsSpy).toHaveBeenCalled();
